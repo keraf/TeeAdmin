@@ -1,0 +1,21 @@
+{
+  "name": "teeadmin",
+  "version": "0.1.0",
+  "description": "Teeworlds web administration tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "teeworlds",
+    "web",
+    "tool",
+    "admin",
+    "server"
+  ],
+  "author": "Rafael Keramidas <rafael@keramid.as>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@teeadmin/server",
+  "version": "0.1.0",
+  "description": "TeeAdmin server",
+  "scripts": {
+    "dev": "WATCH=true node scripts/build.js",
+    "build": "NODE_ENV=production node scripts/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rafael Keramidas <rafael@keramid.as>",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar": "^3.5.1",
+    "esbuild": "^0.8.44"
+  },
+  "dependencies": {
+    "fs-extra": "^9.1.0",
+    "got": "^11.8.1",
+    "tar": "^6.1.0",
+    "ws": "^7.4.3"
+  }
+}

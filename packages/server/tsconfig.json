@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "noLib": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "esModuleInterop": true,
+        "target": "es6",
+        "sourceMap": true,
+        "lib": [
+            "es6"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@services/*": ["src/services/*"],
+            "@utils/*": ["src/utils/*"],
+        }
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.test.ts"
+    ]
+}
+   
