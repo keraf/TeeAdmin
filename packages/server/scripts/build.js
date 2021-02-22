@@ -26,10 +26,10 @@ const build = async (incremental = false) => {
 
 const run = async () => {
     // Initial build
-    console.log('[BUILD] Starting initial build...');
-    console.time('[BUILD] Initial build finished');
+    console.log('Starting initial build...');
+    console.time('Initial build finished');
     const result = await build(isWatch);
-    console.timeEnd(`[BUILD] Initial build finished`);
+    console.timeEnd(`Initial build finished`);
 
     // If we're not watching, there's nothing else to do
     if (!isWatch) return;
@@ -37,25 +37,25 @@ const run = async () => {
     // Launch app
     const appPath = path.join(dist, 'app.js');
     let app = child_process.fork(appPath);
-    console.log('[BUILD] Running app');
+    console.log('Running app');
 
     // Watch for changes in source folder
     const srcPath = path.join(src, '**', '*');
     const watcher = watch(srcPath, { persistent: true });
-    console.log(`[BUILD] Watching folder ${srcPath} for changes`);
+    console.log(`Watching folder ${srcPath} for changes`);
     
     // If changes are detected
     watcher.on('change', async () => {
-        console.log('[BUILD] Changes detected!');
+        console.log('Changes detected!');
 
         // Kill app
         app.kill();
 
         // Incrementally rebuild
-        console.log('[BUILD] Rebuilding...');
-        console.time('[BUILD] Rebuild finished');
+        console.log('Rebuilding...');
+        console.time('Rebuild finished');
         await result.rebuild();
-        console.timeEnd(`[BUILD] Rebuild finished`);
+        console.timeEnd(`Rebuild finished`);
 
         // Respawn a process
         app = child_process.fork(appPath);
@@ -63,7 +63,7 @@ const run = async () => {
     
     // Clean up
     process.on('beforeExit', () => {
-        console.log('[BUILD] Quitting...');
+        console.log('Quitting...');
         app.kill();
         result.rebuild.dispose();
         watcher.close();

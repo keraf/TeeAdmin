@@ -4,6 +4,13 @@
   "description": "Teeworlds web administration tool",
   "main": "index.js",
   "scripts": {
+    "dev:client": "lerna run --scope @teeadmin/client start",
+    "dev:server": "lerna run --scope @teeadmin/server start",
+    "dev:all": "lerna run --parallel start",
+    "build:client": "lerna run --scope @teeadmin/client build",
+    "build:server": "lerna run --scope @teeadmin/server build",
+    "build:all": "lerna run --parallel build",
+    "start": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,5 +24,8 @@
   "license": "MIT",
   "devDependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }

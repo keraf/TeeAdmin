@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "TeeAdmin server",
   "scripts": {
-    "dev": "WATCH=true node scripts/build.js",
+    "start": "WATCH=true node scripts/build.js",
     "build": "NODE_ENV=production node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
